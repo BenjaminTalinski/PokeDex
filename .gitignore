@@ -1,0 +1,8 @@
+# Ignoriert macOS-Metadateien, die nicht ins Repository gehoeren
+.DS_Store
+# Ignoriert Windows-Thumbnail-Dateien
+Thumbs.db
+# Ignoriert alle Log-Dateien (z. B. debug.log)
+*.log
+# Ignoriert lokale VS-Code-Workspace-Einstellungen
+.vscode/*
