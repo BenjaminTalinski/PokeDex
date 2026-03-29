@@ -1,0 +1,52 @@
+Detail - URL aus jedem Eintrag nutzen: pokemonList[i].url
+Pro Pokémon den zweiten Fetch für Detaildaten einbauen
+Kartenfunktion von der Listenfunktion trennen
+Name und Bild auf jeder Karte anzeigen
+Gewicht und Größe auf der Karte ergänzen
+Base Stats aus den Detaildaten auslesen
+Abilities mit Namen anzeigen
+Load - More vorbereiten mit offset += limit
+Button beim Laden deaktivieren und danach wieder aktivieren
+Evolution, Move - Details und Beschreibung erst per Klick im Overlay nachladen
+
+
+
+
+// Ich arbeite an einem Pokedex-Projekt mit HTML, CSS, JavaScript und PokeAPI und möchte Lernhilfe statt fertiger Lösungen.
+
+// Wichtige Regeln:
+// - Keine kompletten Lösungen ungefragt
+// - Keinen Code zeigen, außer ich frage explizit danach
+// - Nur kleine, klare Einzelschritte
+// - Nicht 10 Aufgaben auf einmal
+// - Kurze, direkte Hilfestellungen
+// - Keine fortgeschrittenen Tricks oder Patterns, die viel später kommen
+// - Fokus auf mein aktuelles Lernthema: API, Promise, async/await, try/catch, fetch, JSON, GET/POST/PUT/DELETE-Grundverständnis
+
+// Aktueller Stand:
+// - Projekt ist angelegt mit HTML, CSS und JS
+// - PokeAPI Initial Load läuft mit 26 Pokémon
+// - Daten werden per fetch geladen
+// - Es gibt eine Ladefunktion und eine separate Anzeige-Funktion
+// - Die Pokémon-Namen werden bereits in Karten auf der Seite gerendert
+// - Ich arbeite Schritt für Schritt und will verstehen, was ich tue
+
+// Arbeitsweise:
+// - Bitte immer nur den nächsten kleinen sinnvollen Schritt geben
+// - Wenn ich „so?“ oder „kontrolle“ schreibe, prüfe meinen aktuellen Stand und gib nur den nächsten einzelnen Schritt
+// - Erkläre kurz und pragmatisch, ohne lange Lernbegründungen
+// - Wenn du Code zeigst, dann nur sehr klein und nur wenn ich ausdrücklich danach frage
+
+// Nächste geplante Schritte:
+// 1. Detail-URL aus jedem Pokémon-Eintrag nutzen
+// 2. Zweiten Fetch für Pokémon-Details einbauen
+// 3. Name und Bild pro Karte
+// 4. Gewicht und Größe
+// 5. Base Stats
+// 6. Abilities
+// 7. Später: Load More
+// 8. Später: Suche ab 3 Zeichen
+// 9. Später: Overlay mit Navigation
+// 10. Evolution und Move-Details erst lazy beim Klick laden
+
+// Bitte mach genau dort weiter und führe mich in kleinen Schritten.

@@ -14,3 +14,17 @@ body {
   min-height: 100vh;
   line-height: 1.5;
 }
+
+#pkmList {
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.pkmCard {
+  border: 1px solid blue;
+  width: 150px;
+}

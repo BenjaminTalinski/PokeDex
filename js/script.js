@@ -10,8 +10,7 @@ async function loadData() {
     try {
         let response = await fetch(BASE_URL + "?limit=" + limit + "&offset=" + offset);
         let responseAsJson = await response.json();
-        responseAsJson.results.length;
-        console.log(responseAsJson);
+        showData(responseAsJson.results)
     } catch (error) {
         console.log(error);
     } finally {
@@ -20,8 +19,20 @@ async function loadData() {
 
 }
 
+function showData(pokemonList) {
+    let pkmBox = document.getElementById("pkmList");
+    for (let i = 0; i < pokemonList.length; i++) {
+        let pkmList = document.createElement("div")
+        pkmList.classList.add("pkmCard");
+        let pkmNames = document.createElement("p")
+        pkmNames.classList.add("pkmName");
+        pkmNames.innerText = pokemonList[i].name;
+        pkmList.appendChild(pkmNames);
+        pkmBox.appendChild(pkmList);
 
+    }
 
+}
 
 
 
