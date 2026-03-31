@@ -28,3 +28,13 @@ body {
   border: 1px solid blue;
   width: 150px;
 }
+
+.pkmImgShiny {
+  display: none;
+}
+
+.toggleBtn {
+  height: 20px;
+  width: 50px;
+  cursor: pointer;
+}
