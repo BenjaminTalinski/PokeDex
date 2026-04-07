@@ -36,6 +36,14 @@ async function loadDetailData(detailUrl) {
 }
 
 function createPkmCard(detailData) {
+  let baseName =
+    detailData.name.charAt(0).toUpperCase() + detailData.name.slice(1);
+  let pkmTypes = detailData.types.map(
+    (typeInfo) =>
+      typeInfo.type.name.charAt(0).toUpperCase() + typeInfo.type.name.slice(1),
+  );
+  let pkmTypeColors = pkmTypes.map((type) => getTypeColor(type.toLowerCase()));
+
   let pkmList = document.createElement("div");
   pkmList.classList.add("pkmCard");
   let pkmNames = document.createElement("p");
@@ -50,17 +58,23 @@ function createPkmCard(detailData) {
   pkmImgShiny.classList.add("pkmImgShiny");
   let toggleBtn = document.createElement("button");
   toggleBtn.classList.add("toggleBtn");
-  let baseName =
-    detailData.name.charAt(0).toUpperCase() + detailData.name.slice(1);
+  let pkmTypesText = document.createElement("p");
+  pkmTypesText.classList.add("pkmTypes");
 
   pkmImg.src = detailData.sprites.front_default;
   pkmImgShiny.src = detailData.sprites.front_shiny;
 
-  pkmNames.innerText =
-    detailData.name.charAt(0).toUpperCase() + detailData.name.slice(1);
+  pkmNames.innerText = baseName;
   pkmWeight.innerText = "Weight: " + detailData.weight;
   pkmHeight.innerText = "Height: " + detailData.height;
   toggleBtn.innerText = "Shiny";
+  pkmTypesText.innerText = pkmTypes;
+
+  if (pkmTypeColors.length === 1) {
+    pkmList.style.backgroundColor = pkmTypeColors[0];
+  } else if (pkmTypeColors.length === 2) {
+    pkmList.style.background = `linear-gradient(110deg, ${pkmTypeColors[0]} 50%, ${pkmTypeColors[1]} 50%)`;
+  }
 
   toggleBtn.addEventListener("click", function () {
     if (pkmImg.style.display !== "none") {
@@ -77,6 +91,7 @@ function createPkmCard(detailData) {
   });
 
   pkmList.appendChild(pkmNames);
+  pkmList.appendChild(pkmTypesText);
   pkmList.appendChild(pkmImg);
   pkmList.appendChild(pkmImgShiny);
   pkmList.appendChild(pkmWeight);
@@ -95,6 +110,28 @@ async function showData(pokemonList) {
 
     pkmBox.appendChild(pkmCard);
   }
+}
+
+function getTypeColor(type) {
+  if (type === "normal") return "#bbbbaa";
+  if (type === "fighting") return "#bb5544";
+  if (type === "flying") return "#96caff";
+  if (type === "poison") return "#9553cd";
+  if (type === "ground") return "#a67439";
+  if (type === "rock") return "#bbaa66";
+  if (type === "bug") return "#92c12a";
+  if (type === "ghost") return "#6e4370";
+  if (type === "steel") return "#aaaabb";
+  if (type === "fire") return "#ff421c";
+  if (type === "water") return "#2c9be3";
+  if (type === "grass") return "#62bc5a";
+  if (type === "electric") return "#ffdc00";
+  if (type === "psychic") return "#ff6380";
+  if (type === "ice") return "#74cfc0";
+  if (type === "dragon") return "#5670be";
+  if (type === "dark") return "#4e4545";
+  if (type === "fairy") return "#ec8fe6";
+  return "#ffffff";
 }
 
 loadData();
